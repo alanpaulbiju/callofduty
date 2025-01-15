@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://financify.ae/wp-content/uploads/2023/07/Financify-Favicon-2-01-100x100.png" type="image/x-icon">
+  <title>Financify</title>
+  <style>
+    /* General styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f4f7fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      position: relative;
+    }
+
+    a.go-back-home {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      color: #0e8eff;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    a.go-back-home:hover {
+      text-decoration: underline;
+    }
+
+    /* Form container styles */
+    form {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus {
+      border-color: #0e8eff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color .9s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, rgba(122,96,247,1) 0%, rgba(46,168,238,1) 100%);
+      transition-duration: .9s;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #0e8eff;
+      font-size: 14px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Success message */
+    #loginSuccessMessage {
+      text-align: center;
+      color: #0e8eff;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 15px;
+        width: 90%;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      button {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Go back home link -->
+  <a href="http://localhost:5173/frontend/index.html" class="go-back-home">< Go Back to Home</a>
+
+  <img style="margin-bottom: 1%;" src="https://financify.ae/wp-content/uploads/2023/07/Financify-Favicon-2-01-100x100.png" alt="financify">
+  <h1>Login</h1>
+  
+  <!-- Success message section -->
+  <div id="loginSuccessMessage" style="display: none;">
+    <p>Login successful!</p>
+    <!-- <a href="http://localhost:5173/frontend/index.html"><button>Go to Homepage</button></a> -->
+  </div>
+
+  <form action="/api/login" method="POST">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <a href="/signup">Don't have an account? Sign up here</a>
+
+  <script>
+    // Handle form submission success
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('loginSuccess') && urlParams.get('loginSuccess') === 'true') {
+      document.getElementById('loginSuccessMessage').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
