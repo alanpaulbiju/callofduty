@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+  background-color: #e8e8ed;
+}
+
+.link-hover {
+  transition: color 0.3s;
+  font-weight: 600;
+}
+
+.link-hover:hover {
+  font-weight: 500;
+  background: #0e8eff;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .absolute {
+    position: absolute;
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  .inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .text-7xl {
+    font-size: 4.5rem; 
+    line-height: 1;
+  }
+  
+  .leading-none {
+    line-height: 1;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+   .btn {
+    width: 8em;
+    height: 3em;
+    margin: 0.5em;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin-left: 3.4rem;
+    margin-top: 1rem;
+    transition: color 0.5s;
+  }
+  
+  .btn:hover, .group:hover .btn {
+    color: rgb(255, 255, 255);
+  }
+  
+  .btn:after, .group:hover .btn:after {
+    content: "";
+    background: linear-gradient(45deg, rgba(122,96,247,1) 0%, rgba(46,168,238,1) 100%);
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+  }
+  
+  .btn:hover:after, .group:hover .btn:after {
+    transform: skewX(-45deg) scale(1, 1);
+    transition: all 0.5s;
+  }
+  .arrow {
+    width: 58px;
+    height: 57px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.5s;
+  }
+  
+  .arrow:hover, .group:hover .arrow {
+    color: white;
+  }
+  
+  .arrow:after, .group:hover .arrow:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: linear-gradient(45deg, rgba(122,96,247,1) 0%, rgba(46,168,238,1) 100%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s, width 0.5s, height 0.5s;
+  }
+  
+  .arrow:hover:after, .group:hover .arrow:after {
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  ul.custom-bullets {
+    list-style-type: disc; 
+}
+ul.custom-bullets li::marker {
+    color: rgb(78, 93, 225); 
+}
+.link:hover{
+  color: rgb(78, 93, 225);
+  text-decoration: underline;
+}
+.read-btn:hover{
+  background: linear-gradient(45deg, rgba(122,96,247,1) 0%, rgba(46,168,238,1) 100%);
+  color: white;
+}
+.btn-arrow:hover{
+  background: white;
+}
+
+#img-effect:hover ~ #img-to-scale {
+  transform: scale(0.95);
+}
+.transition-all {
+  transition: all 0.8s ease-in-out;
+}
+
+.cardcontainer:hover{
+  transform: scale(0.95);
+}
+
+.img .rotate {
+  transition: transform 0.6s ease; 
+}
+
+.img .rotate:hover {
+  transform: rotate(360deg);
+}
+.help::before{
+  content: url(https://financify.ae/wp-content/uploads/2023/06/Group-387.png);
+    position: absolute;
+    z-index: 9;
+    bottom: -20px;
+}
+.help-2::before{
+  content: url(https://financify.ae/wp-content/uploads/2023/06/Group-386.png);
+    position: absolute;
+    right: 0.8%;
+    top: 2.8%;
+}
+.social-icon {
+  @apply flex items-center justify-center w-12 h-12 rounded-full text-white transition-all duration-500 ease-in-out;
+}
+.bg-facebook {
+  background-color: rgb(192 197 207);
+}
+
+.bg-twitter {
+  background-color: rgb(192 197 207);
+}
+
+.bg-linkedin {
+  background-color: rgb(192 197 207);
+}
+
+.bg-instagram {
+  background-color: rgb(192 197 207);
+}
+
+.bg-youtube {
+  background-color: rgb(192 197 207);
+}
+
+.bg-tiktok {
+  background-color: rgb(192 197 207);
+}
+
+.social-icon {
+  transition: transform 0.6s ease;
+}
+
+.social-icon:hover {
+  transform: rotate(360deg);
+}
+
+.social-icon.bg-facebook:hover {
+  @apply bg-blue-500;
+}
+
+.social-icon.bg-twitter:hover {
+  @apply bg-blue-300;
+}
+
+.social-icon.bg-linkedin:hover {
+  @apply bg-blue-700;
+}
+
+.social-icon.bg-instagram:hover {
+  @apply bg-pink-500;
+}
+
+.social-icon.bg-youtube:hover {
+  @apply bg-red-500;
+}
+
+.social-icon.bg-tiktok:hover {
+  @apply bg-gray-700;
+} 
+.footer-links {
+  position: relative;
+  left: 0;
+  transition: left 0.9s, color 0.9s;
+}
+
+.footer-links:hover {
+  left: 10px;
+  color: #5299ff;
+}
+
+.footer-background {
+  position: relative;
+  height: 50vh;
+  top: -20%;
+  bottom: 0;
+  width: 100%;
+  background-size: cover;
+  background-repeat: repeat-x !important;
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
